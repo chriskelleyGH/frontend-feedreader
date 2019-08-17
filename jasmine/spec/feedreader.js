@@ -97,8 +97,8 @@ $(function() {
         });
 
         it('contain at least a single entry', function(done){
-            const feed = document.querySelector('.feed');
-            expect(feed.childElementCount).toBeGreaterThan(0);
+            const feed = $('.feed .entry');
+            expect(feed).toBeDefined();
             done();
         });
     });
@@ -112,7 +112,8 @@ $(function() {
 
         let initialFeed, newFeed;
         let initialFeedChildren, newFeedChildren;
-        let initialFeedString, newFeedString = "";
+        let initialFeedString = "";
+        let newFeedString = "";
 
         beforeEach(function(done) {
             loadFeed(0);
