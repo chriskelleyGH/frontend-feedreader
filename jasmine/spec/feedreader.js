@@ -116,14 +116,13 @@ $(function() {
         let newFeedString = "";
 
         beforeEach(function(done) {
-            loadFeed(0);
+            loadFeed(0, loadFeed(1, done));
             initialFeed = document.querySelector('.feed');
             initialFeedChildren = initialFeed.children;
 
             for(i = 0; i < initialFeedChildren.length; i++) {
                 initialFeedString += initialFeedChildren[i].innerText;
             }
-            loadFeed(1, done);
         });
 
         it('changes the content', function(done){
